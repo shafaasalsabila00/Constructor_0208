@@ -82,3 +82,30 @@ public:
     friend void lihatStatus(Admin* a, Peminjam* p, Buku* b);
 };
 
+void lihatStatus(Admin* a, Peminjam* p, Buku* b) {
+    cout << "Admin melihat: " << p->totalPinjaman << " buku sedang dipinjam.\n";
+    cout << "Status buku: " << (b->dipinjam ? "Dipinjam" : "Tersedia") << endl;
+}
+
+int main() {
+    Buku buku1("Pemrograman C++", "Budi");
+    Peminjam peminjam1("Andi", "P001");
+    Petugas petugas1("Sita", "T001", "normal");
+    Admin admin1;
+
+    buku1.tampilkanInfo();
+
+    petugas1.prosesPeminjaman(&buku1, &peminjam1);
+    buku1.tampilkanInfo();
+
+    lihatStatus(&admin1, &peminjam1, &buku1);
+
+    admin1.ubahLevelAkses(&petugas1, "supervisor");
+
+    petugas1.prosesKembali(&buku1, &peminjam1);
+    buku1.tampilkanInfo();
+
+    return 0;
+}
+
+
