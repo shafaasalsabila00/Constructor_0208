@@ -38,3 +38,14 @@ public:
     friend void lihatStatus(Admin*, Peminjam*, Buku*);
 };
 
+class Petugas {
+private:
+    string nama;
+    string idPetugas;
+    string levelAkses;
+
+public:
+    Petugas(string n, string id, string lvl) : nama(n), idPetugas(id), levelAkses(lvl) {}
+    
+};
+
