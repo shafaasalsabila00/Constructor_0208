@@ -25,3 +25,10 @@ friend void lihatStatus(Admin*, Peminjam*, Buku*);
 
 };
 
+class Peminjam {
+private:
+    string nama;
+    string id;
+    int totalPinjaman;
+};
+
