@@ -1,3 +1,5 @@
+//Latihan B
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -108,4 +110,37 @@ int main() {
     return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+// Act 9
+
+// chainfunction
+#include <iostream>
+using namespace std;
+
+class buku
+{
+    string judul;
+
+public:
+    buku setJudul(string judul)
+    {
+        this->judul = judul;
+        return *this; // chain function
+    }
+
+    string getJudul()
+    {
+        return this->judul;
+    }
+
+} bukunya;
 
