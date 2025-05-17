@@ -46,6 +46,27 @@ private:
 
 public:
     Petugas(string n, string id, string lvl) : nama(n), idPetugas(id), levelAkses(lvl) {}
-    
+
+void prosesPeminjaman(Buku* b, Peminjam* p) {
+    if (!b->dipinjam){
+        b->dipinjam = true;
+        p->totalPinjaman++;
+        cout << "Buku berhasil diponjam oleh " << p->nama << endl;
+    }
+    else {
+        cout << "Buku sudah dipinjam.\n";
+    }
+}
+
+void prosesKembali(Buku* b, Peminjam* p) {
+    if (b->dipinjam) {
+            b->dipinjam = false;
+            p->totalPinjaman--;
+            cout << "Buku berhasil dikembalikan oleh " << p->nama << endl;
+    }
+    else {
+        cout << "Buku belum dipinjam.\n";
+    }
+}
 };
 
