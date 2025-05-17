@@ -20,8 +20,8 @@ void tampilkanInfo() {
          << ", Status: " << (dipinjam ? "Dipinjam" : "Tersedia") << endl;
 }
 
-friend class Petugas;
-friend void lihatStatus(Admin*, Peminjam*, Buku*);
+    friend class Petugas;
+    friend void lihatStatus(Admin*, Peminjam*, Buku*);
 
 };
 
@@ -30,5 +30,11 @@ private:
     string nama;
     string id;
     int totalPinjaman;
+
+public:
+    Peminjam(string n, string i) : nama(n), id(i), totalPinjaman(0) {}
+
+    friend class Petugas;
+    friend void lihatStatus(Admin*, Peminjam*, Buku*);
 };
 
