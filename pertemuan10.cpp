@@ -72,3 +72,13 @@ void prosesKembali(Buku* b, Peminjam* p) {
     friend class Admin;
 };
 
+class Admin {
+public:
+    void ubahLevelAkses(Petugas* p, string levelBaru) {
+        p->levelAkses = levelBaru;
+        cout << "Level akses petugas diubah menjadi: " << levelBaru << endl;
+    }
+
+    friend void lihatStatus(Admin* a, Peminjam* p, Buku* b);
+};
+
