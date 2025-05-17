@@ -68,5 +68,7 @@ void prosesKembali(Buku* b, Peminjam* p) {
         cout << "Buku belum dipinjam.\n";
     }
 }
+
+    friend class Admin;
 };
 
